@@ -27,7 +27,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://localhost:4000/v1/areas/addFavorite\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633",
+          "content": "    http://175.41.154.174:4000/v1/areas/addFavorite\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633",
           "type": "json"
         }
       ]
@@ -42,7 +42,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "areaRoutes"
   },
   {
@@ -73,7 +73,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://localhost:4000/v1/areas/deleteFavorite\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633",
+          "content": "    http://175.41.154.174:4000/v1/areas/deleteFavorite\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633",
           "type": "json"
         }
       ]
@@ -88,7 +88,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "areaRoutes"
   },
   {
@@ -112,7 +112,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://localhost:4000/v1/areas/getByBorder?border_id=5ff7f56a15b2b03644824b5a",
+          "content": "http://175.41.154.174:4000/v1/areas/getByBorder?border_id=5ff7f56a15b2b03644824b5a",
           "type": "json"
         }
       ]
@@ -127,7 +127,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "areaRoutes"
   },
   {
@@ -151,7 +151,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://localhost:4000/v1/areas/search?_q=hồ",
+          "content": "http://175.41.154.174:4000/v1/areas/search?_q=hồ",
           "type": "json"
         }
       ]
@@ -166,7 +166,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "areaRoutes"
   },
   {
@@ -197,7 +197,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://localhost:4000/v1/local/login\nPost\n\tusername: hien\n\tpassword: hien123",
+          "content": "    http://175.41.154.174:4000/v1/local/login\nPost\n\tusername: hien\n\tpassword: hien123",
           "type": "json"
         }
       ]
@@ -212,7 +212,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "authRoutes"
   },
   {
@@ -250,7 +250,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://localhost:4000/v1/local/register\nPost\n\tusername: hien\n\tpassword: hien123\n\temail: hien123@gmail.com",
+          "content": "    http://175.41.154.174:4000/v1/local/register\nPost\n\tusername: hien\n\tpassword: hien123\n\temail: hien123@gmail.com",
           "type": "json"
         }
       ]
@@ -265,7 +265,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "authRoutes"
   },
   {
@@ -289,7 +289,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://localhost:4000/v1/borders/getByArea?area_id=5f9ec4e8bfeb451c39403324",
+          "content": "http://175.41.154.174:4000/v1/borders/getByArea?area_id=5f9ec4e8bfeb451c39403324",
           "type": "json"
         }
       ]
@@ -304,7 +304,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/api_Doc.js",
+    "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "borderRoutes"
   },
   {
@@ -349,7 +349,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://localhost:4000/v1/utilities/search?_limit=5&borders=10.8070851,106.6123851&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&borders=10.8070851,106.6123851&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
@@ -364,7 +364,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "src/api/utilityRoutes_Doc.js",
+    "filename": "src/apiDoc/utilityRoutes_Doc.js",
     "groupTitle": "utilitieRoutes"
   }
 ] });
