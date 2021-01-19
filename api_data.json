@@ -309,6 +309,66 @@
   },
   {
     "type": "get",
+    "url": "/v1/utilitie/count",
+    "title": "Đếm số tiện ích",
+    "name": "count",
+    "group": "utilitieRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "_limit",
+            "description": "<p>Giới hạn tiện ích trả về.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "borders",
+            "description": "<p>tọa độ 2 điểm hình chữ nhật trên màn hình.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "area_id",
+            "description": "<p>ID Area.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Tên category.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?_limit=5&borders=10.8070851,106.6123851&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n[{\"count\":5}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/utilityRoutes_Doc.js",
+    "groupTitle": "utilitieRoutes"
+  },
+  {
+    "type": "get",
     "url": "/v1/utilitie/search",
     "title": "Tìm kiếm tiện ích",
     "name": "search",
