@@ -310,8 +310,8 @@
   {
     "type": "get",
     "url": "/v1/utilitie/count",
-    "title": "Đếm số tiện ích",
-    "name": "count",
+    "title": "Đếm số tiện ích trong 1 khu vực",
+    "name": "countArea",
     "group": "utilitieRoutes",
     "parameter": {
       "fields": {
@@ -322,13 +322,6 @@
             "optional": false,
             "field": "_limit",
             "description": "<p>Giới hạn tiện ích trả về.</p>"
-          },
-          {
-            "group": "Query string",
-            "type": "String",
-            "optional": false,
-            "field": "borders",
-            "description": "<p>tọa độ 2 điểm hình chữ nhật trên màn hình.</p>"
           },
           {
             "group": "Query string",
@@ -349,7 +342,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/count?_limit=5&borders=10.8070851,106.6123851&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?_limit=5&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
@@ -358,7 +351,60 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " HTTP/1.1 200 OK\n[{\"count\":5}]",
+          "content": " HTTP/1.1 200 OK\n{\"count\":5}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/utilityRoutes_Doc.js",
+    "groupTitle": "utilitieRoutes"
+  },
+  {
+    "type": "get",
+    "url": "/v1/utilitie/count",
+    "title": "Đếm số tiện ích trong 1 border",
+    "name": "countBorder",
+    "group": "utilitieRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "_limit",
+            "description": "<p>Giới hạn tiện ích trả về.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "border",
+            "description": "<p>tọa độ 2 điểm hình chữ nhật trên màn hình.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Tên category.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?_limit=5&border=10.797928,106.605149,10.811585,106.626574&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\"count\":5}",
           "type": "json"
         }
       ]
@@ -370,8 +416,8 @@
   {
     "type": "get",
     "url": "/v1/utilitie/search",
-    "title": "Tìm kiếm tiện ích",
-    "name": "search",
+    "title": "Tìm kiếm tiện ích trong 1 khu vực",
+    "name": "searchArea",
     "group": "utilitieRoutes",
     "parameter": {
       "fields": {
@@ -382,13 +428,6 @@
             "optional": false,
             "field": "_limit",
             "description": "<p>Giới hạn tiện ích trả về.</p>"
-          },
-          {
-            "group": "Query string",
-            "type": "String",
-            "optional": false,
-            "field": "borders",
-            "description": "<p>tọa độ 2 điểm hình chữ nhật trên màn hình.</p>"
           },
           {
             "group": "Query string",
@@ -409,7 +448,60 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&borders=10.8070851,106.6123851&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "   \nhttp://175.41.154.174:4000/v1/utilities/search?_limit=5&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n[{\"_id\":\"5fdb0a64bcaa773878ec899b\",\"gps\":{\"type\":\"Point\",\"coordinates\":[106.63173676,10.80448055]},\"hash\":\"384359014550541\",\"category\":\"Các cây ATM\"},{\"_id\":\"5fdb0a64bcaa773878ec898f\",\"gps\":{\"type\":\"Point\",\"coordinates\":[106.62998962,10.80547523]},\"hash\":\"753956292549977\",\"category\":\"Các cây ATM\"},{\"_id\":\"5fdb0a64bcaa773878ec898e\",\"gps\":{\"type\":\"Point\",\"coordinates\":[106.62779999,10.80602455]},\"hash\":\"3714308804559427\",\"category\":\"Các cây ATM\"},{\"_id\":\"5fdb0a64bcaa773878ec8a17\",\"gps\":{\"type\":\"Point\",\"coordinates\":[106.62004852,10.80772877]},\"hash\":\"3274362591778644\",\"category\":\"Các cây ATM\"},{\"_id\":\"5fdb0a64bcaa773878ec8a46\",\"gps\":{\"type\":\"Point\",\"coordinates\":[106.61247253,10.81052971]},\"hash\":\"597577700609799\",\"category\":\"Các cây ATM\"}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/utilityRoutes_Doc.js",
+    "groupTitle": "utilitieRoutes"
+  },
+  {
+    "type": "get",
+    "url": "/v1/utilitie/search",
+    "title": "Tìm kiếm tiện ích theo 1 border",
+    "name": "searchBorder",
+    "group": "utilitieRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "_limit",
+            "description": "<p>Giới hạn tiện ích trả về.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "border",
+            "description": "<p>tọa độ 2 điểm hình chữ nhật trên màn hình.</p>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Tên category.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&border=10.797928,106.605149,10.811585,106.626574&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
