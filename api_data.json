@@ -320,13 +320,6 @@
             "group": "Query string",
             "type": "String",
             "optional": false,
-            "field": "_limit",
-            "description": "<p>Giới hạn tiện ích trả về.</p>"
-          },
-          {
-            "group": "Query string",
-            "type": "String",
-            "optional": false,
             "field": "area_id",
             "description": "<p>ID Area.</p>"
           },
@@ -342,7 +335,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/count?_limit=5&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
@@ -351,7 +344,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " HTTP/1.1 200 OK\n{\"count\":5}",
+          "content": " HTTP/1.1 200 OK\n{\"count\":5,\"category\":\"Các cây ATM\"}",
           "type": "json"
         }
       ]
@@ -373,13 +366,6 @@
             "group": "Query string",
             "type": "String",
             "optional": false,
-            "field": "_limit",
-            "description": "<p>Giới hạn tiện ích trả về.</p>"
-          },
-          {
-            "group": "Query string",
-            "type": "String",
-            "optional": false,
             "field": "border",
             "description": "<p>tọa độ 2 điểm hình chữ nhật trên màn hình.</p>"
           },
@@ -395,7 +381,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/count?_limit=5&border=10.797928,106.605149,10.811585,106.626574&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?border=10.797928,106.605149,10.811585,106.626574&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
@@ -404,7 +390,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " HTTP/1.1 200 OK\n{\"count\":5}",
+          "content": " HTTP/1.1 200 OK\n{\"count\":5,\"category\":\"Các cây ATM\"}",
           "type": "json"
         }
       ]
@@ -448,7 +434,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "   \nhttp://175.41.154.174:4000/v1/utilities/search?_limit=5&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
