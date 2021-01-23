@@ -47,6 +47,59 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/v1/areas/addRate",
+    "title": "Thêm đánh giá khu vực",
+    "name": "addRate",
+    "group": "areaRoutes",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Truyền username.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "areaId",
+            "description": "<p>Truyền AreaID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "review_text",
+            "description": "<p>Truyền Text Review User.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "    http://175.41.154.174:4000/v1/areas/addRate\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633\n\treview_text: canh dep",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   {\n    \"ok\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/api_Doc.js",
+    "groupTitle": "areaRoutes"
+  },
+  {
+    "type": "post",
     "url": "/v1/areas/deleteFavorite",
     "title": "Xóa khu vực yêu thích",
     "name": "deleteFavorite",
@@ -320,8 +373,8 @@ define({ "api": [
             "group": "Query string",
             "type": "String",
             "optional": false,
-            "field": "area_id",
-            "description": "<p>ID Area.</p>"
+            "field": "border_id",
+            "description": "<p>ID Border.</p>"
           },
           {
             "group": "Query string",
@@ -335,7 +388,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/count?area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?border_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
@@ -419,8 +472,8 @@ define({ "api": [
             "group": "Query string",
             "type": "String",
             "optional": false,
-            "field": "area_id",
-            "description": "<p>ID Area.</p>"
+            "field": "border_id",
+            "description": "<p>ID Border.</p>"
           },
           {
             "group": "Query string",
@@ -434,7 +487,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&area_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
+          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&border_id=5f9ec4e8bfeb451c39403324&category=C%C3%A1c%20c%C3%A2y%20ATM",
           "type": "json"
         }
       ]
