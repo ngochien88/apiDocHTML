@@ -114,59 +114,6 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/v1/areas/addRate",
-    "title": "Thêm đánh giá khu vực",
-    "name": "addRate",
-    "group": "areaRoutes",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "username",
-            "description": "<p>Truyền username.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "areaId",
-            "description": "<p>Truyền AreaID.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "review_text",
-            "description": "<p>Truyền Text Review User.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/areas/addRate\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633\n\treview_text: canh dep",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "    HTTP/1.1 200 OK\n   {\n    \"ok\": true\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/apiDoc/api_Doc.js",
-    "groupTitle": "areaRoutes"
-  },
-  {
-    "type": "post",
     "url": "/v1/areas/deleteFavorite",
     "title": "Xóa khu vực yêu thích",
     "name": "deleteFavorite",
@@ -426,6 +373,461 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "src/apiDoc/api_Doc.js",
     "groupTitle": "borderRoutes"
+  },
+  {
+    "type": "post",
+    "url": "v1/review/addReviewPoint",
+    "title": "Thêm điểm user review",
+    "name": "addReviewPoint",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "point",
+            "description": "<p>Điểm người dùng nhập.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "khongkhi_text",
+            "description": "<p>Chất lượng không khí người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "khongkhi_point",
+            "description": "<p>Điểm chất lượng không khí người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "giaothong_text",
+            "description": "<p>Chất lượng giao thông người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "giaothong_point",
+            "description": "<p>Điểm giao thông người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ngap_text",
+            "description": "<p>Chất lượng ngập người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ngap_point",
+            "description": "<p>Điểm chất lượng ngập người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "anninh_text",
+            "description": "<p>Chất lượng an ninh người dùng chọn.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "anninh_point",
+            "description": "<p>Điểm chất lượng an ninh người dùng chọn.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "    http://175.41.154.174:4000/v1/review/addReviewPoint\nPost\n{\n    \"point\": 1,\n    \"khongkhi_text\": \"Tốt\",\n    \"khongkhi_point\": 4,\n    \"giaothong_text\": \"Tốt\",\n    \"giaothong_point\": 2,\n    \"ngap_text\": \"Tốt\",\n    \"ngap_point\": 4,\n    \"anninh_text\": \"Tốt\",\n    \"anninh_point\": 4,\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token người dùng.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n  {\n  \"ketqua\": \"add thanh cong\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "post",
+    "url": "v1/review/addReviewText",
+    "title": "Thêm bình luận user",
+    "name": "addReviewText",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "review_text",
+            "description": "<p>Bình luận người dùng</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "area_id",
+            "description": "<p>AreaID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "    http://175.41.154.174:4000/v1/review/addReviewText\nPost\n{\n    \"review_text\": \"mon ngon\",\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token người dùng.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n  \"ketqua\": \"add thanh cong\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "post",
+    "url": "v1/review/deleteReviewPoint",
+    "title": "Xóa điểm user review",
+    "name": "deleteReviewPoint",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "area_id",
+            "description": "<p>Area ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "    http://175.41.154.174:4000/v1/review/deleteReviewPoint\nPost\n{\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token người dùng.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n  \"kq\": \"xoa thanh cong\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "post",
+    "url": "v1/review/deleteReviewText",
+    "title": "Xóa bình luận user review",
+    "name": "deleteReviewText",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "area_id",
+            "description": "<p>Area ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "    http://175.41.154.174:4000/v1/review/deleteReviewText\nPost\n{\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token người dùng.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n  \"kq\": \"xoa thanh cong\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "get",
+    "url": "/v1/review/getReviewPointByArea",
+    "title": "Lấy điểm đánh giá bằng AreaID",
+    "name": "getReviewPointByArea",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "area_id",
+            "description": "<p>Area ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/review/getReviewPointByArea?area_id=5f9eb794bfeb451c39400633",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   [\n  {\n    \"_id\": \"6012e4ba36dcdb2d9592c1e3\",\n    \"point\": 4,\n    \"khongkhi_text\": \"tốt\",\n    \"khongkhi_point\": 5,\n    \"giaothong_text\": \"Trung bình\",\n    \"giaothong_point\": 2,\n    \"ngap_text\": \"kém\",\n    \"ngap_point\": 8,\n    \"anninh_text\": \"Giỏi\",\n    \"anninh_point\": 4,\n    \"area_id\": \"5f9eb794bfeb451c39400633\",\n    \"user_id\": \"5fffd0ad144fb71c25d993f5\",\n    \"__v\": 0\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "get",
+    "url": "/v1/review/getReviewPointByUser",
+    "title": "Lấy điểm đánh giá bằng UserID",
+    "name": "getReviewPointByUser",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>User ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/review/getReviewPointByUser?user_id=5fffd0ad144fb71c25d993f5",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   [\n  {\n    \"_id\": \"6012e4ba36dcdb2d9592c1e3\",\n    \"point\": 4,\n    \"khongkhi_text\": \"tốt\",\n    \"khongkhi_point\": 5,\n    \"giaothong_text\": \"Trung bình\",\n    \"giaothong_point\": 2,\n    \"ngap_text\": \"kém\",\n    \"ngap_point\": 8,\n    \"anninh_text\": \"Giỏi\",\n    \"anninh_point\": 4,\n    \"area_id\": \"5f9eb794bfeb451c39400633\",\n    \"user_id\": \"5fffd0ad144fb71c25d993f5\",\n    \"__v\": 0\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "get",
+    "url": "/v1/review/getReviewTextByArea",
+    "title": "Lấy bình luận đánh giá bằng AreaID",
+    "name": "getReviewTextByArea",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "area_id",
+            "description": "<p>Area ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/review/getReviewTextByArea?area_id=5f9eb794bfeb451c39400633",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   [\n    {\n        \"_id\": \"60139850c5344009104f8860\",\n        \"review_text\": \"mon ngon\",\n        \"area_id\": \"5f9eb794bfeb451c39400633\",\n        \"user_id\": \"5fffd0ad144fb71c25d993f5\",\n        \"__v\": 0\n    },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
+  },
+  {
+    "type": "get",
+    "url": "/v1/review/getReviewTextByUser",
+    "title": "Lấy bình luận đánh giá bằng UserID",
+    "name": "getReviewTextByUser",
+    "group": "reviewRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>User ID.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://175.41.154.174:4000/v1/review/getReviewTextByUser?user_id=5fffd0ad144fb71c25d993f5",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   [\n    {\n        \"_id\": \"60139850c5344009104f8860\",\n        \"review_text\": \"mon ngon\",\n        \"area_id\": \"5f9eb794bfeb451c39400633\",\n        \"user_id\": \"5fffd0ad144fb71c25d993f5\",\n        \"__v\": 0\n    },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/review.js",
+    "groupTitle": "reviewRoutes"
   },
   {
     "type": "get",
