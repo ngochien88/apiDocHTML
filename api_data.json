@@ -448,7 +448,7 @@
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<p>Tên category.</p>"
+            "description": "<p>nhà hàng, giải trí, mua sắm, cuộc sống về đêm, làm đẹp, ẩm thực đường phố, sức khỏe, giáo dục, cafe, Các cây ATM, Tài chính, Khách sạn và chỗ ở, du lịch, dịch vụ, giao thông, thể thao, tổ chức.</p>"
           }
         ]
       },
@@ -494,7 +494,7 @@
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<p>Tên category.</p>"
+            "description": "<p>nhà hàng, giải trí, mua sắm, cuộc sống về đêm, làm đẹp, ẩm thực đường phố, sức khỏe, giáo dục, cafe, Các cây ATM, Tài chính, Khách sạn và chỗ ở, du lịch, dịch vụ, giao thông, thể thao, tổ chức.</p>"
           }
         ]
       },
@@ -547,7 +547,7 @@
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<p>Tên category.</p>"
+            "description": "<p>nhà hàng, giải trí, mua sắm, cuộc sống về đêm, làm đẹp, ẩm thực đường phố, sức khỏe, giáo dục, cafe, Các cây ATM, Tài chính, Khách sạn và chỗ ở, du lịch, dịch vụ, giao thông, thể thao, tổ chức.</p>"
           }
         ]
       },
@@ -600,7 +600,7 @@
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<p>Tên category.</p>"
+            "description": "<p>nhà hàng, giải trí, mua sắm, cuộc sống về đêm, làm đẹp, ẩm thực đường phố, sức khỏe, giáo dục, cafe, Các cây ATM, Tài chính, Khách sạn và chỗ ở, du lịch, dịch vụ, giao thông, thể thao, tổ chức.</p>"
           }
         ]
       },
