@@ -850,14 +850,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<ul> <li>restaurant : &quot;Ẩm thực đường phố&quot;,&quot;Nhà hàng&quot;,&quot;Café&quot;<br></li> <li>atm_bank: &quot;Các cây ATM&quot;,&quot;Tài chính&quot;<br></li> <li>coffee: &quot;Café&quot;,&quot;Cuộc sống về đêm&quot;,&quot;Giải trí&quot;<br></li> <li>education: &quot;Giáo dục&quot;<br></li> <li>entertaiment: &quot;Giải trí&quot;,&quot;Làm đẹp&quot;,&quot;Thể thao&quot;<br></li> <li>hospital: &quot;Sức khỏe&quot;<br></li> <li>hotel_travel: &quot;Khách sạn và chỗ ở&quot;<br></li> <li>place: &quot;Du lịch&quot;,&quot;Thắng cảnh&quot;,&quot;Tổ chức&quot;<br></li> <li>services: &quot;Dịch vụ&quot;, &quot;Giao thông&quot;<br></li> <li>store_supermarket: &quot;Mua sắm&quot;<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy 3 api:</li> <li>http://175.41.154.174:4000/v1/utilities/count?border_id=5ff7f56a15b2b03644824b4e&amp;category=Ẩm thực đường phố <br></li> <li>http://175.41.154.174:4000/v1/utilities/count?border_id=5ff7f56a15b2b03644824b4e&amp;category=Nhà hàng <br></li> <li>http://175.41.154.174:4000/v1/utilities/count?border_id=5ff7f56a15b2b03644824b4e&amp;category=Café <br></li> </ul>"
+            "description": "<ul> <li>restaurant : category=1<br></li> <li>coffee: category=2<br></li> <li>entertaiment: category=3<br></li> <li>atm_bank: category=4<br></li> <li>hospital: category=5<br></li> <li>hotel_travel: category=6<br></li> <li>store_supermarket: category=7<br></li> <li>services: category=8<br></li> <li>place: category=9<br></li> <li>education: category=10<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy:</li> <li>http://175.41.154.174:4000/v1/utilities/count?border_id=5ff7f56a15b2b03644824b4e&amp;category=1</li> </ul>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/count?border_id=5ff7f56a15b2b03644824b4e&category=Ẩm thực đường phố",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?border_id=5ff7f56a15b2b03644824b4e&category=1",
           "type": "json"
         }
       ]
@@ -896,14 +896,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<ul> <li>restaurant : &quot;Ẩm thực đường phố&quot;,&quot;Nhà hàng&quot;,&quot;Café&quot;<br></li> <li>atm_bank: &quot;Các cây ATM&quot;,&quot;Tài chính&quot;<br></li> <li>coffee: &quot;Café&quot;,&quot;Cuộc sống về đêm&quot;,&quot;Giải trí&quot;<br></li> <li>education: &quot;Giáo dục&quot;<br></li> <li>entertaiment: &quot;Giải trí&quot;,&quot;Làm đẹp&quot;,&quot;Thể thao&quot;<br></li> <li>hospital: &quot;Sức khỏe&quot;<br></li> <li>hotel_travel: &quot;Khách sạn và chỗ ở&quot;<br></li> <li>place: &quot;Du lịch&quot;,&quot;Thắng cảnh&quot;,&quot;Tổ chức&quot;<br></li> <li>services: &quot;Dịch vụ&quot;, &quot;Giao thông&quot;<br></li> <li>store_supermarket: &quot;Mua sắm&quot;<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy 3 api:</li> <li>http://175.41.154.174:4000/v1/utilities/count?borders=10.797928,106.605149,10.811585,106.626574&amp;category=Ẩm thực đường phố <br></li> <li>http://175.41.154.174:4000/v1/utilities/count?borders=10.797928,106.605149,10.811585,106.626574&amp;category=Nhà hàng <br></li> <li>http://175.41.154.174:4000/v1/utilities/count?borders=10.797928,106.605149,10.811585,106.626574&amp;category=Café <br></li> </ul>"
+            "description": "<ul> <li>restaurant : category=1<br></li> <li>coffee: category=2<br></li> <li>entertaiment: category=3<br></li> <li>atm_bank: category=4<br></li> <li>hospital: category=5<br></li> <li>hotel_travel: category=6<br></li> <li>store_supermarket: category=7<br></li> <li>services: category=8<br></li> <li>place: category=9<br></li> <li>education: category=10<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy:</li> <li>http://175.41.154.174:4000/v1/utilities/count?borders=10.797928,106.605149,10.811585,106.626574&amp;category=1</li> </ul>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/count?borders=10.797928,106.605149,10.811585,106.626574&category=Ẩm thực đường phố",
+          "content": "http://175.41.154.174:4000/v1/utilities/count?borders=10.797928,106.605149,10.811585,106.626574&category=1",
           "type": "json"
         }
       ]
@@ -956,14 +956,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<ul> <li>restaurant : &quot;Ẩm thực đường phố&quot;,&quot;Nhà hàng&quot;,&quot;Café&quot;<br></li> <li>atm_bank: &quot;Các cây ATM&quot;,&quot;Tài chính&quot;<br></li> <li>coffee: &quot;Café&quot;,&quot;Cuộc sống về đêm&quot;,&quot;Giải trí&quot;<br></li> <li>education: &quot;Giáo dục&quot;<br></li> <li>entertaiment: &quot;Giải trí&quot;,&quot;Làm đẹp&quot;,&quot;Thể thao&quot;<br></li> <li>hospital: &quot;Sức khỏe&quot;<br></li> <li>hotel_travel: &quot;Khách sạn và chỗ ở&quot;<br></li> <li>place: &quot;Du lịch&quot;,&quot;Thắng cảnh&quot;,&quot;Tổ chức&quot;<br></li> <li>services: &quot;Dịch vụ&quot;, &quot;Giao thông&quot;<br></li> <li>store_supermarket: &quot;Mua sắm&quot;<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy 3 api:</li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;border_id=5ff7f56a15b2b03644824b4e&amp;category=Ẩm thực đường phố&amp;page=1 <br></li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;border_id=5ff7f56a15b2b03644824b4e&amp;category=Nhà hàng&amp;page=1 <br></li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;border_id=5ff7f56a15b2b03644824b4e&amp;category=Café&amp;page=1 <br></li> </ul>"
+            "description": "<ul> <li>restaurant : category=1<br></li> <li>coffee: category=2<br></li> <li>entertaiment: category=3<br></li> <li>atm_bank: category=4<br></li> <li>hospital: category=5<br></li> <li>hotel_travel: category=6<br></li> <li>store_supermarket: category=7<br></li> <li>services: category=8<br></li> <li>place: category=9<br></li> <li>education: category=10<br> Giả sử muốn tìm tiện ích nhà hàng thì:</li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;border_id=5ff7f56a15b2b03644824b4e&amp;category=1&amp;page=1</li> </ul>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&border_id=5ff7f56a15b2b03644824b4e&category=Ẩm thực đường phố&page=1",
+          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&border_id=5ff7f56a15b2b03644824b4e&category=1&page=1",
           "type": "json"
         }
       ]
@@ -1016,14 +1016,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "category",
-            "description": "<ul> <li>restaurant : &quot;Ẩm thực đường phố&quot;,&quot;Nhà hàng&quot;,&quot;Café&quot;<br></li> <li>atm_bank: &quot;Các cây ATM&quot;,&quot;Tài chính&quot;<br></li> <li>coffee: &quot;Café&quot;,&quot;Cuộc sống về đêm&quot;,&quot;Giải trí&quot;<br></li> <li>education: &quot;Giáo dục&quot;<br></li> <li>entertaiment: &quot;Giải trí&quot;,&quot;Làm đẹp&quot;,&quot;Thể thao&quot;<br></li> <li>hospital: &quot;Sức khỏe&quot;<br></li> <li>hotel_travel: &quot;Khách sạn và chỗ ở&quot;<br></li> <li>place: &quot;Du lịch&quot;,&quot;Thắng cảnh&quot;,&quot;Tổ chức&quot;<br></li> <li>services: &quot;Dịch vụ&quot;, &quot;Giao thông&quot;<br></li> <li>store_supermarket: &quot;Mua sắm&quot;<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy 3 api:</li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;borders=10.797928,106.605149,10.811585,106.626574&amp;category=Ẩm thực đường phố&amp;page=1 <br></li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;borders=10.797928,106.605149,10.811585,106.626574&amp;category=Nhà hàng&amp;page=1 <br></li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;borders=10.797928,106.605149,10.811585,106.626574&amp;category=Café&amp;page=1 <br></li> </ul>"
+            "description": "<ul> <li>restaurant : category=1<br></li> <li>coffee: category=2<br></li> <li>entertaiment: category=3<br></li> <li>atm_bank: category=4<br></li> <li>hospital: category=5<br></li> <li>hotel_travel: category=6<br></li> <li>store_supermarket: category=7<br></li> <li>services: category=8<br></li> <li>place: category=9<br></li> <li>education: category=10<br> Giả sử muốn tìm tiện ích nhà hàng thì chạy:</li> <li>http://175.41.154.174:4000/v1/utilities/search?_limit=5&amp;borders=10.797928,106.605149,10.811585,106.626574&amp;category=1&amp;page=1</li> </ul>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&borders=10.797928,106.605149,10.811585,106.626574&category=Ẩm thực đường phố&page=1",
+          "content": "http://175.41.154.174:4000/v1/utilities/search?_limit=5&borders=10.797928,106.605149,10.811585,106.626574&category=1&page=1",
           "type": "json"
         }
       ]
