@@ -387,13 +387,6 @@ define({ "api": [
             "group": "Query string",
             "type": "String",
             "optional": false,
-            "field": "type",
-            "description": "<p>1,2,3 là tỉnh, huyện, hoặc xã (type của areas)</p>"
-          },
-          {
-            "group": "Query string",
-            "type": "String",
-            "optional": false,
             "field": "provinceCode",
             "description": "<p>mã Tỉnh</p> <ul> <li>VD: ho-chi-minh, tien-giang,…</li> </ul>"
           },
@@ -430,7 +423,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://47.241.7.27:5000/price?type=3&provinceCode=ho-chi-minh&districtCode=quan-3&villageCode=phuong-06&year=2019&category_id=1&fbclid=IwAR1BGxCyjsLz9-u5EbCrneoMy8Hspns1v7GFLGvv8ARpvJU1weoenSNwDXY",
+          "content": "http://47.241.7.27:5000/price?type=3&provinceCode=ho-chi-minh&districtCode=quan-3&villageCode=phuong-06&year=2019&category_id=1",
           "type": "json"
         }
       ]
@@ -468,6 +461,66 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "    HTTP/1.1 200 OK\n   [\n    {\n        \"id\": 8,\n        \"name\": \"Cho thuê căn hộ chung cư\"\n    },\n    {\n        \"id\": 0,\n        \"name\": \"Bán căn hộ chung cư\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Bán đất\"\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Cho thuê cửa hàng, ki ốt\"\n    },\n    {\n        \"id\": 12,\n        \"name\": \"Cho thuê nhà riêng\"\n    },\n    {\n        \"id\": 11,\n        \"name\": \"Cho thuê nhà mặt phố\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Bán loại bất động sản khác\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Bán nhà mặt phố\"\n    },\n    {\n        \"id\": 15,\n        \"name\": \"Cho thuê loại bất động sản khác\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Bán nhà riêng\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Bán trang trại, khu nghỉ dưỡng\"\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Cho thuê kho, nhà xưởng, đất\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Bán đất nền dự án\"\n    },\n    {\n        \"id\": 13,\n        \"name\": \"Cho thuê nhà trọ, phòng trọ\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Bán nhà biệt thự, liền kề\"\n    },\n    {\n        \"id\": 14,\n        \"name\": \"Cho thuê văn phòng\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/apiDoc/price_Doc.js",
+    "groupTitle": "priceRoutes"
+  },
+  {
+    "type": "get",
+    "url": "structure",
+    "title": "API cơ cấu theo thể loại bất động sản của khu vực",
+    "name": "structureSeach",
+    "group": "priceRoutes",
+    "parameter": {
+      "fields": {
+        "Query string": [
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "provinceCode",
+            "description": "<p>mã Tỉnh</p> <ul> <li>VD: ho-chi-minh, tien-giang,…</li> </ul>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "districtCode",
+            "description": "<p>mã quận/huyện</p> <ul> <li>VD: quan-1, huyen-binh-chanh,…</li> </ul>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "villageCode",
+            "description": "<p>mã xã/phường</p> <ul> <li>VD: phuong-7, xa-tan-phu,…</li> </ul>"
+          },
+          {
+            "group": "Query string",
+            "type": "String",
+            "optional": false,
+            "field": "yyear:",
+            "description": "<p>năm cần thống kê về cơ cấu theo thể loại (hiện tại year nằm trong khoản 2015 - 2019)</p> <ul> <li>year = &quot;all&quot;, thì cơ cấu được thống kê theo tất cả các năm: 2015,2016,2017,2018,2019</li> <li>nếu 2015 &lt;= year &lt;= 2019, thì cơ cấu theo từng năm: (12 cột tương ứng 12 tháng)</li> </ul>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "http://47.241.7.27:5000/structure?provinceCode=ho-chi-minh&year=2019&districtCode=quan-3&villageCode=phuong-06",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n  [\n    {\n        \"province\": \"Hồ Chí Minh\",\n        \"district\": \"Quận 3\",\n        \"village\": \"Phường 06\",\n        \"provinceCode\": \"ho-chi-minh\",\n        \"districtCode\": \"quan-3\",\n        \"villageCode\": \"phuong-06\",\n        \"structure_by_year\": [\n            {\n                \"year\": 2019,\n                \"title\": \"Biểu đồ cơ cấu mua bán bất động sản theo thể loại năm 2019\",\n                \"data\": [\n                    {\n                        \"x\": \"Bán căn hộ chung cư\",\n                        \"y\": 4\n                    },\n                    {\n                        \"x\": \"Bán nhà biệt thự, liền kề\",\n                        \"y\": 4\n                    },\n                    {\n                        \"x\": \"Bán nhà mặt phố\",\n                        \"y\": 1178\n                    },\n                    {\n                        \"x\": \"Bán nhà riêng\",\n                        \"y\": 278\n                    },\n                    {\n                        \"x\": \"Bán trang trại, khu nghỉ dưỡng\",\n                        \"y\": 0\n                    },\n                    {\n                        \"x\": \"Bán đất\",\n                        \"y\": 47\n                    },\n                    {\n                        \"x\": \"Bán đất nền dự án\",\n                        \"y\": 0\n                    },\n                    {\n                        \"x\": \"Bán loại bất động sản khác\",\n                        \"y\": 2\n                    },\n                    {\n                        \"x\": \"Cho thuê căn hộ chung cư\",\n                        \"y\": 13\n                    },\n                    {\n                        \"x\": \"Cho thuê cửa hàng, ki ốt\",\n                        \"y\": 21\n                    },\n                    {\n                        \"x\": \"Cho thuê kho, nhà xưởng, đất\",\n                        \"y\": 6\n                    },\n                    {\n                        \"x\": \"Cho thuê nhà mặt phố\",\n                        \"y\": 416\n                    },\n                    {\n                        \"x\": \"Cho thuê nhà riêng\",\n                        \"y\": 77\n                    },\n                    {\n                        \"x\": \"Cho thuê nhà trọ, phòng trọ\",\n                        \"y\": 10\n                    },\n                    {\n                        \"x\": \"Cho thuê văn phòng\",\n                        \"y\": 50\n                    },\n                    {\n                        \"x\": \"Cho thuê loại bất động sản khác\",\n                        \"y\": 0\n                    }\n                ]\n            }\n        ]\n    }\n]",
           "type": "json"
         }
       ]
