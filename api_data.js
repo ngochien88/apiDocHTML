@@ -20,7 +20,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/areas/addFavorite\nPost\n\tareaId: 5f9eb794bfeb451c39400633",
+          "content": "    http://175.41.154.174:4000/v1/areas/addFavorite\nPost\nHEADERS\n- Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY\nBody raw\n\t\"areaId\": \"5f9eb794bfeb451c39400633\"",
           "type": "json"
         }
       ]
@@ -51,13 +51,6 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "username",
-            "description": "<p>Truyền username.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
             "field": "areaId",
             "description": "<p>Truyền AreaID.</p>"
           }
@@ -66,7 +59,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/areas/deleteFavorite\nPost\n\tusername: hien\n\tareaId: 5f9eb794bfeb451c39400633",
+          "content": "    http://175.41.154.174:4000/v1/areas/deleteFavorite\nPost\nHEADERS\n- Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY\nBody raw\n\t\"areaId\": \"5f9eb794bfeb451c39400633\"",
           "type": "json"
         }
       ]
@@ -190,7 +183,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/local/login\nPost\n\tusername: hien\n\tpassword: hien123",
+          "content": "    http://175.41.154.174:4000/v1/local/login\nPost\n\t\"username\": \"hien\"\n\t\"password\": \"hien123\"",
           "type": "json"
         }
       ]
@@ -243,7 +236,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/local/register\nPost\n\tusername: hien\n\tpassword: hien123\n\temail: hien123@gmail.com",
+          "content": "    http://175.41.154.174:4000/v1/local/register\nPost\n\t\"username\": \"hien\"\n\t\"password\": \"hien123\"\n\t\"email\": \"hien123@gmail.com\"",
           "type": "json"
         }
       ]
@@ -599,7 +592,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/review/addReviewPoint\nPost\n{\n    \"point\": 1,\n    \"khongkhi_text\": \"Tốt\",\n    \"khongkhi_point\": 4,\n    \"giaothong_text\": \"Tốt\",\n    \"giaothong_point\": 2,\n    \"ngap_text\": \"Tốt\",\n    \"ngap_point\": 4,\n    \"anninh_text\": \"Tốt\",\n    \"anninh_point\": 4,\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "content": "    http://175.41.154.174:4000/v1/review/addReviewPoint\nPost\n\nHEADERS\n- Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY\nBody raw\n{\n    \"point\": 1,\n    \"khongkhi_text\": \"Tốt\",\n    \"khongkhi_point\": 4,\n    \"giaothong_text\": \"Tốt\",\n    \"giaothong_point\": 2,\n    \"ngap_text\": \"Tốt\",\n    \"ngap_point\": 4,\n    \"anninh_text\": \"Tốt\",\n    \"anninh_point\": 4,\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
           "type": "json"
         }
       ]
@@ -665,7 +658,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/review/addReviewText\nPost\n{\n    \"review_text\": \"mon ngon\",\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "content": "    http://175.41.154.174:4000/v1/review/addReviewText\nPost\nHEADERS\n- Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY\nBody raw\n{\n    \"review_text\": \"mon ngon\",\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
           "type": "json"
         }
       ]
@@ -724,7 +717,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/review/deleteReviewPoint\nPost\n{\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "content": "    http://175.41.154.174:4000/v1/review/deleteReviewPoint\nPost\nHEADERS\n- Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY\nBody raw\n{\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
           "type": "json"
         }
       ]
@@ -783,7 +776,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "    http://175.41.154.174:4000/v1/review/deleteReviewText\nPost\n{\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
+          "content": "    http://175.41.154.174:4000/v1/review/deleteReviewText\nPost\nHEADERS\n- Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDA1M2MxNzYwNzUyNTI0MzQxZjAxMDciLCJ1c2VybmFtZSI6ImhpZW4iLCJpYXQiOjE2MTEzOTMxNDIsImV4cCI6MTYxMTQyOTE0Mn0.oh1iAOVbmy9D_NAz3hJZJwDkzzr-1g0oaJBuLXavEGY\nBody raw\n{\n    \"area_id\": \"5f9eb794bfeb451c39400633\"\n}",
           "type": "json"
         }
       ]
